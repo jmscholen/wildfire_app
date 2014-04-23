@@ -1,5 +1,8 @@
 WildfireApp::Application.routes.draw do
-  get "welcome/index"
+  get "welcome/index" do
+    redirect "/"
+  end
+
   resources :locations
 
   resources :wild_fires
