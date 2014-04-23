@@ -1,0 +1,21 @@
+= form_for @wild_fire do |f|
+  - if @wild_fire.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@wild_fire.errors.count, "error")} prohibited this wild_fire from being saved:"
+      %ul
+        - @wild_fire.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    = f.text_field :name        
+  .field
+    = f.label :firefighters_deployed
+    = f.check_box :firefighters_deployed
+  .field
+    = f.label :hazard_level
+    = f.text_field :hazard_level
+  .field
+    = f.label :location_id
+    = f.select :location_id, Location.all.collect {|d| [d.name, d.id]}
+  .actions
+    = f.submit 'Save'

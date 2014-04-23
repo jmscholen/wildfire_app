@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Accessible by ground vehicle:
+  = @location.accessible_by_ground_vehicle
+%p
+  %b Local water:
+  = @location.local_water
+%p
+  %b Humidity:
+  = @location.humidity
+%p
+  %b Air quality:
+  = @location.air_quality
+
+= link_to 'Edit', edit_location_path(@location)
+\|
+= link_to 'Back', locations_path

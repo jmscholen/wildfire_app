@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Firefighters deployed:
+  = @wild_fire.firefighters_deployed
+%p
+  %b Hazard level:
+  = @wild_fire.hazard_level
+%p
+  %b Location:
+  = @wild_fire.location_id
+
+= link_to 'Edit', edit_wild_fire_path(@wild_fire)
+\|
+= link_to 'Back', wild_fires_path

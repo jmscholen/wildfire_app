@@ -1,0 +1,26 @@
+%h1 Listing wild_fires
+
+%table
+  %tr
+    %th Name
+    %th Firefighters deployed
+    %th Hazard level
+    %th Location
+    %th
+    %th
+    %th
+
+  - @wild_fires.each do |wild_fire|
+    - location = Location.find(wild_fire.location_id)
+    %tr
+      %td= wild_fire.name
+      %td= wild_fire.firefighters_deployed
+      %td= wild_fire.hazard_level
+      %td= location.name
+      %td= link_to 'Show', wild_fire
+      %td= link_to 'Edit', edit_wild_fire_path(wild_fire)
+      %td= link_to 'Destroy', wild_fire, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Wild fire', new_wild_fire_path
