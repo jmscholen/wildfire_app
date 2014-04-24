@@ -1,0 +1,7 @@
+
+= form_tag search_wild_fires_path, method: "get" do
+	= text_field_tag :search, params[:search], placeholder: "Search by City"
+	= submit_tag "Search", :name => nil
+
+
+

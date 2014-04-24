@@ -3,9 +3,18 @@ WildfireApp::Application.routes.draw do
     redirect "/"
   end
 
-  resources :locations
+  resources :locations  do 
+    member do
+      get :download_map
+    end
+  end
 
-  resources :wild_fires
+  resources :wild_fires do 
+      collection do
+          get :search
+      end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

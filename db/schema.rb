@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422174148) do
+ActiveRecord::Schema.define(version: 20140424110246) do
 
   create_table "locations", force: true do |t|
     t.boolean  "accessible_by_ground_vehicle"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140422174148) do
     t.string   "name"
     t.string   "city"
     t.string   "state"
+    t.string   "map"
   end
 
   create_table "wild_fires", force: true do |t|

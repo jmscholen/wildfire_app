@@ -62,14 +62,25 @@ class WildFiresController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_wild_fire
-      @wild_fire = WildFire.find(params[:id])
-    end
+  def search
+    @wild_fires = WildFire.search(params[:search])
+    render :index
+  end
+    
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def wild_fire_params
-      params.require(:wild_fire).permit(:firefighters_deployed, :hazard_level, :location_id, :name)
-    end
+    # Use callbacks to share common setup or constraints between actions.
+  def set_wild_fire
+    @wild_fire = WildFire.find(params[:id])
+  end
+
+
+
+
+  private
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def wild_fire_params
+    params.require(:wild_fire).permit(:firefighters_deployed, :hazard_level, :location_id, :name)
+  end
+
 end

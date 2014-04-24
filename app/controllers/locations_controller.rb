@@ -61,6 +61,13 @@ class LocationsController < ApplicationController
     end
   end
 
+  def download_map
+    @location = Location.find(params[:id])
+    file = @location.map
+    send_file file.path
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_location
@@ -69,6 +76,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:accessible_by_ground_vehicle, :local_water, :humidity, :air_quality, :name, :city, :state)
+      params.require(:location).permit(:accessible_by_ground_vehicle, :local_water, :humidity, :air_quality, :name, :city, :state, :map)
     end
 end

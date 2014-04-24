@@ -6,8 +6,8 @@
     %th Firefighters deployed
     %th Hazard level
     %th Location
-    %th
-    %th
+    %th city
+    %th state
     %th
 
   - @wild_fires.each do |wild_fire|
@@ -17,6 +17,8 @@
       %td= wild_fire.firefighters_deployed
       %td= wild_fire.hazard_level
       %td= location.name
+      %td= location.city
+      %td= location.state
       %td= link_to 'Show', wild_fire
       %td= link_to 'Edit', edit_wild_fire_path(wild_fire)
       %td= link_to 'Destroy', wild_fire, :method => :delete, :data => { :confirm => 'Are you sure?' }

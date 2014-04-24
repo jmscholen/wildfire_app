@@ -1,4 +1,11 @@
 %p#notice= notice
+%p
+  %b Name:  
+  = @location.name
+= image_tag @location.map.url
+%br
+= link_to "Download map", download_map_location_path 
+
 
 %p
   %b Accessible by ground vehicle:
@@ -12,6 +19,7 @@
 %p
   %b Air quality:
   = @location.air_quality
+
 
 = link_to 'Edit', edit_location_path(@location)
 \|
