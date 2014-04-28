@@ -1,31 +1,30 @@
-%h1 Listing locations
-
-%table
-  %tr
-    %th Name
-    %th City
-    %th State
-    %th Accessible by ground vehicle
-    %th Local water
-    %th Humidity
-    %th Air quality
-    %th
-    %th
-    %th
-
-  - @locations.each do |location|
-    %tr
-      %td= location.name
-      %td= location.city
-      %td= location.state
-      %td= location.accessible_by_ground_vehicle
-      %td= location.local_water
-      %td= location.humidity
-      %td= location.air_quality
-      %td= link_to 'Show', location
-      %td= link_to 'Edit', edit_location_path(location)
-      %td= link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Location', new_location_path
+.container
+  .col-md-12
+  %h1 Listing locations
+  %table.table.table-hover
+    %thread
+      %tr
+        %th Name
+        %th City
+        %th State
+        %th Accessible by ground vehicle
+        %th Local water
+        %th Humidity
+        %th Air quality
+        %th
+        %th
+        %th
+    %tbody
+    - @locations.each do |location|
+      %tr
+        %td= location.name
+        %td= location.city
+        %td= location.state
+        %td= location.accessible_by_ground_vehicle
+        %td= location.local_water
+        %td= location.humidity
+        %td= location.air_quality
+        %td= link_to 'Show', location
+        %td= link_to 'Edit', edit_location_path(location)
+        %td= link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  = button_to 'New Location', new_location_path, :method => :get

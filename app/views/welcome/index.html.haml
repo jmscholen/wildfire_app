@@ -1,10 +1,13 @@
-%h1 WildFires 
-%h2 Find wildfires through out the country:
-=button_to "Wild Fires", wild_fires_path, method: "get"
 
-%h2 Find locations with wildfires
-=button_to "Locations", locations_path, method: "get"
+.navbar.navbar-default.navigation
+	%h4 Search
+	= render "search"
+.container
+	%h1 WildFires 
+	%h2 Find wildfires through out the country:
+	=button_to "Wild Fires", wild_fires_path, method: "get"
+	%h2 Find locations with wildfires
+	=button_to "Locations", locations_path, method: "get"
 
 
-%h2 Search
-=render "search"
+	
